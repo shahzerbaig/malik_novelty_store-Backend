@@ -1,13 +1,15 @@
 module.exports = {
   apps: [
     {
-      script: "./dist/index.js",
+      script: "index.js",
       watch: ".",
-      env_file: "./.env",
-    },
-    {
-      script: "./service-worker/",
-      watch: ["./service-worker"],
+      env: {
+        NODE_ENV: "development",
+      },
+      env_production: {
+        NODE_ENV: "production",
+      },
+      env_file: "./.env", // Add this line to specify .env file path
     },
   ],
 
