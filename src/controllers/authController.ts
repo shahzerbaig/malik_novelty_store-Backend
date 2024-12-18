@@ -54,6 +54,7 @@ export const loginUser = async (req: Request, res: Response): Promise<void> => {
 
     res.json({ token });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "Internal server error" });
   }
 };
